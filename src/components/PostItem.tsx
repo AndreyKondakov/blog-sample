@@ -2,15 +2,7 @@
 import Link from "next/link";
 import { Post } from "@/types/post";
 import { Card, CardHeader, CardBody, CardFooter, Avatar } from "@heroui/react";
-
-const formatDate = (date: any) => {
-  const dateObj = date.toDate ? date.toDate() : new Date(date);
-  return new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(dateObj);
-};
+import { formatDate } from "utils/dateFormat";
 
 const formatCommentCount = (count: number) => {
   if (count === 0) return "No comments";

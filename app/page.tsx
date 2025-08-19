@@ -1,17 +1,14 @@
 "use client";
 
 import { PostList } from "@/components/PostList";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/store/store";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/store/store";
 import { MainLayout } from "@/layout/MainLayout";
 import { setSearchQuery } from "@/store/slices/postsSlice";
 import { Input } from "@heroui/react";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
-  const searchQuery = useSelector(
-    (state: RootState) => state.posts.searchQuery
-  );
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchQuery(e.target.value));

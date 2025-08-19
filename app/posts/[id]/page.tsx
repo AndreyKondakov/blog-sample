@@ -10,17 +10,7 @@ import { CommentForm } from "@/components/CommentForm";
 import { CommentList } from "@/components/CommentList";
 import { deletePost, fetchPostById } from "@/store/slices/postsSlice";
 import { MainLayout } from "@/layout/MainLayout";
-
-const formatDate = (date: any) => {
-  const dateObj = date.toDate ? date.toDate() : new Date(date);
-  return new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(dateObj);
-};
+import { formatFullDate } from "utils/dateFormat";
 
 export default function PostDetailPage() {
   const params = useParams();
@@ -98,7 +88,7 @@ export default function PostDetailPage() {
         <div className="text-sm text-gray-500 mb-8">
           <span>By {post.author}</span>
           <span className="mx-2">•</span>
-          <span>{formatDate(post.createdAt)}</span>
+          <span>{formatFullDate(post.createdAt)}</span>
         </div>
 
         <div className="prose prose-lg max-w-none text-gray-700 whitespace-pre-wrap">

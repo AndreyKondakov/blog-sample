@@ -4,14 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { Comment } from "@/types/comment";
 import { fetchComments } from "@/store/slices/commentsSlice";
-
-const formatDate = (date: any) => {
-  const dateObj = date.toDate ? date.toDate() : new Date(date);
-  return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
-    timeStyle: "short",
-  }).format(dateObj);
-};
+import { formatDate } from "utils/dateFormat";
 
 interface CommentListProps {
   postId: string;
