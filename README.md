@@ -4,7 +4,7 @@ A modern, responsive single-page blog application built with Next.js, TypeScript
 
 ## ✨ Live Demo
 
-**[Link to Live Demo]**
+**[Link to Live Demo]**(https://blog-sample-a1av.vercel.app/)
 
 ## ⚙️ Getting Started
 
