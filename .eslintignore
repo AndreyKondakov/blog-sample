@@ -1,0 +1,10 @@
+# Configuration files
+jest.config.js
+jest.setup.js
+next.config.mjs
+postcss.config.mjs
+tailwind.config.ts
+
+# Build output & dependencies
+.next/
+node_modules/
